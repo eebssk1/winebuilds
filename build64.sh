@@ -17,7 +17,7 @@ export i386_CFLAGS="$CFLAGS"
 export LDFLAGS="-Wl,-O3 -static-libgcc -static-libstdc++"
 export LDEXECFLAGS="$LDFLAGS"
 
-MIMALLOC_SRC="$P/mimalloc-v3.5.3"
+MIMALLOC_SRC="$(ls -d $P/mimalloc-* | head -n 1)"
 cmake -S "$MIMALLOC_SRC" -B b64/mimalloc \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
